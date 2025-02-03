@@ -41,6 +41,7 @@ formData.form.addEventListener('submit', (e) => {
 function saveToLS(key, value) {
   const jsonData = JSON.stringify(value);
   localStorage.setItem(key, jsonData);
+  try
 }
 
 function loadFromLS(key) {
@@ -48,7 +49,7 @@ function loadFromLS(key) {
   try {
     const data = JSON.parse(body);
     return data;
-  } catch{
+  } catch (error){
     return body;
   }
 }
